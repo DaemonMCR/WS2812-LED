@@ -72,6 +72,11 @@ def load_leds():
     ser.flush()
     write_console("> LOAD\n")
 
+def clear_console():
+    console.config(state=tk.NORMAL)
+    console.delete("1.0", tk.END)
+    console.config(state=tk.DISABLED)
+
 def previous_command(event=None):
     global history_index
 
@@ -436,11 +441,6 @@ save_button = tk.Button(
     font=("Segoe UI", 10, "bold")
 )
 
-save_button.pack(
-    side="left",
-    padx=(0, 10)
-)
-
 
 load_button = tk.Button(
     save_load_frame,
@@ -451,11 +451,31 @@ load_button = tk.Button(
     fg="#3B302A",
     font=("Segoe UI", 10, "bold")
 )
-
-load_button.pack(
-    side="left"
+save_button.pack(
+    side="left",
+    padx=(0, 10)
 )
 
+
+load_button.pack(
+    side="left",
+    padx=(0, 10)
+)
+
+
+clear_button = tk.Button(
+    save_load_frame,
+    text="CLEAR CONSOLE",
+    command=clear_console,
+    width=20,
+    bg="#E8E3D6",
+    fg="#3B302A",
+    font=("Segoe UI", 10, "bold")
+)
+
+clear_button.pack(
+    side="left"
+)
 
 
 # ---------------- Help Box ----------------
