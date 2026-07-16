@@ -262,7 +262,7 @@ def make_slider(parent, text, command, colour):
 window = tk.Tk()
 
 window.title("WS2812 Controller")
-window.geometry("1200x650")
+window.state("zoomed")
 
 
 icon_path = os.path.join(
