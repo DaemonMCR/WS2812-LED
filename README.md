@@ -6,7 +6,7 @@ This software was designed to run on the Elegoo Uno R3 board in combination with
 The software can either be run with TLS via the recipe file - WS2812_TLS.rcp - or directly through the python file - main.py. From there a command can be entered into the "Serial Command" box and then executed.
 
 # Things to note
-Currently the software has the digital PWM and number of LEDs hardcoded. To change the Digital (PWM ~) used, change the "PIN" macro in the arduino code. To change the number of LEDs hooked up to the board change the "LED_COUNT" macro.
+Currently the software has the digital PWM and number of LEDs hardcoded. To change the Digital (PWM ~) used, change the "PIN" macro in the arduino code. To change the number of LEDs hooked up to the board change the "LED_COUNT" macro. By default the connection runs on the 115200 serial baud but can be changed via the "SERIAL" macro.
 
 # Usage
 - HELP - usage: HELP
