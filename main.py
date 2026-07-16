@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
 import serial
 import os
+import time
 
 # ---------------- Serial ----------------
 
@@ -11,7 +12,7 @@ ser = serial.Serial("COM3", 115200, timeout=0.1)
 
 command_history = []
 history_index = -1
-ignore_serial_count = 0
+ignore_serial_until = 0
 
 
 # ---------------- Functions ----------------
@@ -24,7 +25,7 @@ def write_console(text):
 
 
 def update_values(value=None):
-    global ignore_serial
+    global ignore_serial_until
 
     r = red_slider.get()
     g = green_slider.get()
@@ -34,11 +35,8 @@ def update_values(value=None):
     g_value.config(text=str(g))
     b_value.config(text=str(b))
 
-    ignore_serial = True
-
-    global ignore_serial_count
-
-    ignore_serial_count += 1
+    # Ignore serial output for a short time after slider updates
+    ignore_serial_until = time.time() + 0.2
 
     command = f"FILL {r} {g} {b}\n"
     ser.write(command.encode("ascii"))
@@ -112,12 +110,8 @@ def read_serial():
         try:
             line = ser.readline().decode("ascii").strip()
 
-            global ignore_serial_count
-
             if line:
-                if ignore_serial_count > 0:
-                    ignore_serial_count -= 1
-                else:
+                if time.time() >= ignore_serial_until:
                     write_console(line + "\n")
 
         except UnicodeDecodeError:
