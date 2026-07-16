@@ -6,14 +6,14 @@ This software was designed to run on the Elegoo Uno R3 board in combination with
 The software can either be run with TLS via the recipe file (WS2812_TLS.rcp) or directly through the python file (main.py)
 
 # Usage
-SET - usage: SET {LED_NUMBER} {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}
-SET_RANGE - usage: SET_RANGE {START_LED}-{END_LED} {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}
-GET - usage: GET {LED_NUMBER}
-CLEAR - usage: CLEAR {LED_NUMBER}
-CLEAR_ALL - usage: CLEAR_ALL
-FILL - usage: FILL {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}
-INTENSITY - usage: INTENSITY {INTENSITY_PERCENTAGE}
-RANDOM - usage: RANDOM
-SAVE - usage: SAVE
-LOAD - usage: LOAD
-VERSION - usage: VERSION
+- SET - usage: SET {LED_NUMBER} {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}
+- SET_RANGE - usage: SET_RANGE {START_LED}-{END_LED} {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}
+- GET - usage: GET {LED_NUMBER}
+- CLEAR - usage: CLEAR {LED_NUMBER}
+- CLEAR_ALL - usage: CLEAR_ALL
+- FILL - usage: FILL {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}
+- INTENSITY - usage: INTENSITY {INTENSITY_PERCENTAGE}
+- RANDOM - usage: RANDOM
+- SAVE - usage: SAVE
+- LOAD - usage: LOAD
+- VERSION - usage: VERSION
