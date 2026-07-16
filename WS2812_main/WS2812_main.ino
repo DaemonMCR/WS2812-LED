@@ -37,6 +37,7 @@ void loop()
     if (line == "HELP") {
       Serial.println("Available commands:");
       Serial.println("");
+      Serial.println("HELP - usage: HELP");
       Serial.println("SET - usage: SET {LED_NUMBER} {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}");
       Serial.println("SET_RANGE - usage: SET_RANGE {START_LED}-{END_LED} {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}");
       Serial.println("GET - usage: GET {LED_NUMBER}");
