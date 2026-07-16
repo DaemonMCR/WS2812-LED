@@ -17,3 +17,6 @@ The software can either be run with TLS via the recipe file (WS2812_TLS.rcp) or 
 - SAVE - usage: SAVE
 - LOAD - usage: LOAD
 - VERSION - usage: VERSION
+
+# Library used
+Adafruit Neopixel - https://github.com/adafruit/adafruit_neopixel
