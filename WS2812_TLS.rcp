@@ -1,0 +1,5 @@
+<Recipe version="1.10.17.1 x64" user="admin" settings="C:\TLS\TLS Simulator 1.10.17.1\Default.hrd" save3DFiles="False" date_and_time="2026.7.15_10.19.6.658" avg_run_time_s="259.7516745" last_estimated_time="0" save_3D_files="False">
+  <python skip="False" cust_title="" locked="False" show_childs="True" icmd_color="-1" file_name="C:\TLS\TEMP\python_arguments.tmp" append_to_file="False" close_file_after="True" end_of_line="0" script_file_name="C:\Users\Thoma\Documents\WS2812-LED-Project\main.py" arguments="" result_file_name="" wait_for_finish="True">
+    <IInfoEntryContainer />
+  </python>
+</Recipe>
