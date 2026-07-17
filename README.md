@@ -17,6 +17,7 @@ Currently the software has the digital PWM and number of LEDs hardcoded. To chan
 - CLEAR_ALL - usage: CLEAR_ALL
 - FILL - usage: FILL {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}
 - INTENSITY - usage: INTENSITY {INTENSITY_PERCENTAGE}
+- GET_INTENSITY - usage: GET_INTENSITY
 - RANDOM - usage: RANDOM
 - SAVE - usage: SAVE
 - LOAD - usage: LOAD

@@ -7,6 +7,8 @@
 #define SERIAL 115200 // Serial baud
 #define VERSION "v1.0.0" // Software version
 
+int currentIntensity = 100;
+
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LED_COUNT, PIN, NEO_RGB + NEO_KHZ800);
 
 void setup()
@@ -45,6 +47,7 @@ void loop()
       Serial.println("CLEAR_ALL - usage: CLEAR_ALL");
       Serial.println("FILL - usage: FILL {RED_VALUE} {GREEN_VALUE} {BLUE_VALUE}");
       Serial.println("INTENSITY - usage: INTENSITY {INTENSITY_PERCENTAGE}");
+      Serial.println("GET_INTENSITY - usage: GET_INTENSITY");
       Serial.println("RANDOM - usage: RANDOM");
       Serial.println("SAVE - usage: SAVE");
       Serial.println("LOAD - usage: LOAD");
@@ -138,11 +141,19 @@ void loop()
     else if (sscanf(line.c_str(), "INTENSITY %d", &intensity) == 1) {
       intensity = constrain(intensity, 0, 100);
 
+      currentIntensity = intensity;
+
       // Convert 0-100% to 0-255
       leds.setBrightness((intensity * 255) / 100);
       leds.show();
+
       Serial.print("Set intensity of all LEDs to ");
       Serial.print(intensity);
+      Serial.println("%");
+    }
+    else if (line == "GET_INTENSITY") {
+      Serial.print("Current intensity: ");
+      Serial.print(currentIntensity);
       Serial.println("%");
     }
     else if (line == "RANDOM") {
